@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { ActiveLink } from ".."
 
 const navList = [
     {path: "/about", text: "About"},
@@ -13,7 +13,7 @@ export const Navbar = () => {
         <div className="flex flex-1"></div>
         {
             navList.map( navItem => (
-                <Link key={navItem.path} href={navItem.path} className="mr-2">{navItem.text}</Link>
+                <ActiveLink key={navItem.path} { ...navItem }/>
             ))
         }
     </nav>
